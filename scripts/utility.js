@@ -24,11 +24,11 @@ function setBackgroundColorById(elementId){
 function getARandomAlphabet (){
     const alphabetsString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetsString.split('');
-    console.log(alphabets);
+    // console.log(alphabets);
 
     const randomNumber = Math.random()*25;
     const index = Math.round(randomNumber);
-    console.log(index);
+    // console.log(index);
 
     const alphabet = alphabets[index];
     return alphabet;
