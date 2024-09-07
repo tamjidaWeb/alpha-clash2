@@ -9,6 +9,28 @@
 //     const playGround = document.getElementById('play-ground');
 //     playGround.classList.remove('hidden');
 // }
+function addEventListenerUpEvent (event){
+    const playerPressed = event.key;
+
+    //key player is expected to press 
+   const currentAlphabetElement = document.getElementById('current-alphabet');
+   const currentAlphabet = currentAlphabetElement.innerText;
+   const expectedAlphabet = currentAlphabet.toLowerCase();
+
+   //check right or wrong answer
+
+   if(playerPressed === expectedAlphabet){
+    console.log('you got a point');
+   }
+   else{
+    console.log('lose a life');
+   }
+}
+
+
+document.addEventListener('keyup', handleKeyboardKeyUpEvent)
+
+
 function continueGame(){
 
     //step 1: generate a random alphabet
@@ -21,7 +43,8 @@ function continueGame(){
 
 
    //set background color
-    setBackgroundColorById(alphabet)
+    setBackgroundColorById(alphabet);
+    // removebackgroundById(alphabet)
 
 
 }
