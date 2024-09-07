@@ -35,13 +35,26 @@ function handleKeyboardKeyUpEvent(event){
     const currentAlphabetElement = document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetElement.innerText;
     const expectedAlphabet = currentAlphabet.toLowerCase();
-    console.log(playerPressed,expectedAlphabet);
+    // console.log(playerPressed,expectedAlphabet);
 
     //check matched or not
 
     if(playerPressed === expectedAlphabet){
         console.log('you get a point');
-        console.log('you have pressed correctly ', expectedAlphabet)
+        // console.log('you have pressed correctly ', expectedAlphabet);
+        //update score:
+        //1 get the current score
+
+        const currentScore = document.getElementById('current-score');
+        const currentScoreText = currentScore.innerText;
+        const currentScores = parseInt(currentScoreText);
+        console.log(currentScores)
+        //2 increase the score by 1
+
+        const newscore = currentScores +1;
+
+        currentScore.innerText = newscore;
+        removebackgroundById(expectedAlphabet);
         continueGame();
     }
     else{
@@ -55,7 +68,7 @@ function continueGame(){
 
     //step 1: generate a random alphabet
     const alphabet = getARandomAlphabet();
-    console.log('your random alphabet', alphabet)
+    // console.log('your random alphabet', alphabet)
    //set randomly generated alphabet to the screen (show it)
 
    const currentAlphabetelement = document.getElementById('current-alphabet');
